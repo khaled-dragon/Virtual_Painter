@@ -32,7 +32,7 @@ An AI-powered virtual painting application that allows users to draw on the scre
 
 2. **Install dependencies:**
    ```bash
-pip install opencv-python mediapipe numpy
+   pip install opencv-python mediapipe numpy
 
 3. **Run the application:**
    ```bash
@@ -71,3 +71,4 @@ pip install opencv-python mediapipe numpy
 │   ├── 2.png
 │   ├── 3.png
 │   └── 4.png
+
