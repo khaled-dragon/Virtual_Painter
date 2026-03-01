@@ -83,7 +83,6 @@
         let xp = 0, yp = 0;
         let drawColor = "#594BE9"; 
         let brushThickness = 25;
-        let eraserThickness = 100;
 
         function onResults(results) {
             canvasCtx.save();
@@ -128,6 +127,11 @@
                                 currentHeader = headerImages[3];
                             }
                         }
+
+                        if (x1 > 1180 && x1 < 1250 && y1 > 150 && y1 < 650) {
+                            brushThickness = Math.round(((650 - y1) / 500) * 95 + 5);
+                        }
+
                         canvasCtx.fillStyle = drawColor;
                         canvasCtx.beginPath();
                         canvasCtx.roundRect(x1, y1 - 25, x2 - x1, 50, 10);
@@ -148,7 +152,7 @@
                         
                         if (drawColor === "#000000") {
                             drawCtx.globalCompositeOperation = 'destination-out';
-                            drawCtx.lineWidth = eraserThickness;
+                            drawCtx.lineWidth = brushThickness * 3;
                         } else {
                             drawCtx.globalCompositeOperation = 'source-over';
                             drawCtx.strokeStyle = drawColor;
@@ -167,6 +171,33 @@
             }
 
             canvasCtx.setTransform(1, 0, 0, 1, 0, 0);
+
+            canvasCtx.fillStyle = "rgba(255, 255, 255, 0.1)";
+            canvasCtx.roundRect(1200, 150, 15, 500, 10);
+            canvasCtx.fill();
+
+            let knobY = 650 - ((brushThickness - 5) / 95) * 500;
+            
+            canvasCtx.strokeStyle = "white";
+            canvasCtx.lineWidth = 2;
+            canvasCtx.beginPath();
+            canvasCtx.moveTo(1200, knobY);
+            canvasCtx.lineTo(1215, knobY);
+            canvasCtx.stroke();
+
+            canvasCtx.fillStyle = drawColor === "#000000" ? "#ffffff" : drawColor;
+            canvasCtx.beginPath();
+            canvasCtx.arc(1207.5, knobY, 12, 0, Math.PI * 2);
+            canvasCtx.fill();
+            canvasCtx.strokeStyle = "white";
+            canvasCtx.lineWidth = 3;
+            canvasCtx.stroke();
+
+            canvasCtx.fillStyle = "white";
+            canvasCtx.font = "bold 22px Arial";
+            canvasCtx.textAlign = "center";
+            canvasCtx.fillText(brushThickness, 1207.5, 135);
+
             canvasCtx.drawImage(drawCanvas, 0, 0);
             if(currentHeader.complete) {
                 canvasCtx.drawImage(currentHeader, 0, 0, 1280, 125);
