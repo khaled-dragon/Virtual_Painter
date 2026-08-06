@@ -1,8 +1,8 @@
-# AI Virtual Painter 🎨✋
+# AI Virtual Painter
 
 An AI-powered virtual painting application that allows users to draw on the screen using hand gestures captured through a camera.
 
-## 🚀 Features
+##  Features
 * **Gesture-Based Drawing:** Draw on the screen using your index finger detected by AI hand tracking.
 * **Color Selection Mode:** Raise both index and middle fingers to switch between different colors.
 * **Eraser Tool:** Select black color to erase drawings naturally.
@@ -11,7 +11,7 @@ An AI-powered virtual painting application that allows users to draw on the scre
   - Desktop version using Python.
   - Web-based version using JavaScript and MediaPipe Hands.
 
-## 🛠️ Built With
+##  Built With
 ### Desktop Version
 * **Python**
 * **OpenCV:** For video capture and image processing.
@@ -23,7 +23,7 @@ An AI-powered virtual painting application that allows users to draw on the scre
 * **MediaPipe Hands (Web):** Hand tracking in the browser.
 * **Canvas API:** For drawing and rendering.
 
-## 📦 Installation & Setup (Python Version)
+##  Installation & Setup (Python Version)
 
 1. **Clone the repository:**
    ```bash
@@ -38,7 +38,7 @@ An AI-powered virtual painting application that allows users to draw on the scre
    ```bash
    python VirtualPainter.py
 
-## 🌐 Run Web Version
+##  Run Web Version
 
 1. Make sure the **Header** folder exists and contains the header images.
 2. Open `index.html` using **Live Server** or any local server.
@@ -46,21 +46,21 @@ An AI-powered virtual painting application that allows users to draw on the scre
 
 ---
 
-## 🎮 How to Use
+##  How to Use
 
 1. Show your hand clearly in front of the camera.
 
-### 🟡 Selection Mode
+###  Selection Mode
 - Raise your **Index** and **Middle** fingers.
 - Move your hand to the **top bar** to select colors or the eraser.
 
-### ✏️ Drawing Mode
+###  Drawing Mode
 - Raise only your **Index finger** to start drawing.
 - Move your finger smoothly to paint on the screen in real time.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 ├── VirtualPainter.py
